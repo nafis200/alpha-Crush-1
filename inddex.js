@@ -10,8 +10,18 @@
 //     playground.classList.remove('hidden')
 // }
 
+function continueGame(){
+    //step -1: generate random alphabet
+    const alphabet = getARandom();
+
+    //set alphabet
+    const current = document.getElementById('current-alphabet')
+    current.innerText = alphabet
+    SetBackgroundColorById(alphabet)
+}
 
 function play(){
      hideElementById('home-screen')
      showElementById('play-ground')
+     continueGame()
 }
