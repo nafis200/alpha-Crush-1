@@ -1,14 +1,21 @@
 
-// function play(){
-//     //step1: hide the home screen. to hide the screen add the class 
-//     const homeSection = document.getElementById('home-screen')
+function handleKeyBoard(event){
+    const playerpressed = event.key;
 
-//     // console.log(homeSection.classList)
-//     homeSection.classList.add('hidden')
+    const current = document.getElementById('current-alphabet');
+    const currentalphabet = current.innerText;
+    const expected = currentalphabet.toLowerCase();
+    if(playerpressed === expected){
+        console.log('you get a point')
+        RemoveBackground(expected)
+        continueGame()
+    }
+    else{
+        console.log('you miss')
+    }
+}
 
-//     const playground = document.getElementById('play-ground')
-//     playground.classList.remove('hidden')
-// }
+document.addEventListener('keyup',handleKeyBoard);
 
 function continueGame(){
     //step -1: generate random alphabet
