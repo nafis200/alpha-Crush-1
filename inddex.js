@@ -7,11 +7,22 @@ function handleKeyBoard(event){
     const expected = currentalphabet.toLowerCase();
     if(playerpressed === expected){
         console.log('you get a point')
+
+        const score = document.getElementById('score')
+        const currentScore = score.innerText
+        const currentNumber = parseInt(currentScore);
+        const newScore = currentNumber + 1;
+        score.innerText = newScore;
         RemoveBackground(expected)
         continueGame()
     }
     else{
         console.log('you miss')
+        const currentLife = document.getElementById('Life')
+        const life = currentLife.innerText
+        const LifeNumber = parseInt(life)
+        const NewLife = LifeNumber - 1
+        currentLife.innerText = NewLife
     }
 }
 
