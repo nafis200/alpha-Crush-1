@@ -32,6 +32,9 @@ function handleKeyBoard(event){
         const life = getTextElement('Life')
         const newLife = life - 1;
         setElementValue('Life',newLife)
+        if(newLife === 0){
+            gameOver()
+        }
     }
 }
 
@@ -49,6 +52,17 @@ function continueGame(){
 
 function play(){
      hideElementById('home-screen')
+     hideElementById('final-score')
      showElementById('play-ground')
+    //  reset Score
+    setElementValue('Life',5)
+    setElementValue('score',0)
+
      continueGame()
+}
+
+
+function gameOver(){
+      hideElementById('play-ground')
+      showElementById('final-score')
 }
