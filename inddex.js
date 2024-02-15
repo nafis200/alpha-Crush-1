@@ -1,7 +1,10 @@
 
 function handleKeyBoard(event){
     const playerpressed = event.key;
-
+    // stop the game if pressed esc
+    if(playerpressed == 'Escape'){
+        gameOver()
+    }
     const current = document.getElementById('current-alphabet');
     const currentalphabet = current.innerText;
     const expected = currentalphabet.toLowerCase();
@@ -65,4 +68,11 @@ function play(){
 function gameOver(){
       hideElementById('play-ground')
       showElementById('final-score')
+      //update finalScore
+      const lastScore= getTextElement('score')
+      setElementValue('game-score',lastScore)
+     //clear
+    //  const alphabet = getElementById('play-ground')
+    const currentalp = getElementTextById('current-alphabet')
+    RemoveBackground(currentalp)
 }
